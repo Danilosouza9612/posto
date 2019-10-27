@@ -1,6 +1,10 @@
 package model;
 
+import java.util.Calendar;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Abastecimento{
 	private int id;
@@ -10,11 +14,13 @@ public class Abastecimento{
 	private Cliente cliente;
 	private Bomba bomba;
 	
-	
-	public Abastecimento(int id, Date data, float preco, float qtdLitros, Cliente cliente, Bomba bomba) {
-		this.id = id;
-		this.data = data;
-		this.preco = preco;
+	@JsonCreator
+	public Abastecimento(@JsonProperty("id") int id,
+						 @JsonProperty("qtdLitros") float qtdLitros, 
+						 @JsonProperty("cliente") Cliente cliente, 
+						 @JsonProperty("bomba") Bomba bomba) {
+		this.id=id;
+		this.data = Calendar.getInstance().getTime();
 		this.qtdLitros = qtdLitros;
 		this.cliente = cliente;
 		this.bomba = bomba;

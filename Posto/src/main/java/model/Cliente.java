@@ -1,5 +1,8 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Cliente {
 	private int id;
 	private String nome;
@@ -8,8 +11,10 @@ public class Cliente {
 	public Cliente() {
 		
 	}
-	public Cliente(int id, String nome, String cpf) {
-		super();
+	@JsonCreator
+	public Cliente(@JsonProperty("id") int id, 
+				   @JsonProperty("nome") String nome, 
+				   @JsonProperty("cpf") String cpf) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;

@@ -1,7 +1,9 @@
 package DAO;
 
-import model.Posto;
+import java.util.Iterator;
+
+import model.Faturamento;
 
 public interface PostoDAO {
-	public void novoPosto(Posto posto);
+	public Iterator<Faturamento> listarFaturamentos() throws Exception;
 }

@@ -1,5 +1,8 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Bomba {
 	private int id;
 	private Posto posto;
@@ -11,8 +14,12 @@ public class Bomba {
 		
 	}
 	
-	
-	public Bomba(int id, Posto posto, Combustivel combustivel, float preco, float qtdRestante) {
+	@JsonCreator
+	public Bomba(@JsonProperty("id") int id,
+				 @JsonProperty("posto") Posto posto, 
+				 @JsonProperty("combustivel") Combustivel combustivel, 
+				 @JsonProperty("preco") float preco, 
+				 @JsonProperty("qtdRestante") float qtdRestante) {
 		this.id = id;
 		this.posto = posto;
 		this.combustivel = combustivel;
@@ -51,6 +58,4 @@ public class Bomba {
 	public void setQtdRestante(float qtdRestante) {
 		this.qtdRestante = qtdRestante;
 	}
-	
-	
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {InputComponent} from './component.js';
 
-class novoAbastecimento extends React.Component{
+class NovoAbastecimento extends React.Component{
     
     render(){
         return (
@@ -10,14 +10,15 @@ class novoAbastecimento extends React.Component{
                     <div>
                         
                     </div>
-                    <InputComponent text="Data" name="data"/>
-                    <InputComponent text="Quantidade de Litros" name="litros"/>
-                    <InputComponent text="CPF do Cliente" name="cpf"/>
-                    <InputComponent text="Nome do Cliente" name="data"/>
+                    <InputComponent type="date" text="Data" name="data"/>
+                    <InputComponent type="time" text="Hora" name="hora"/>
+                    <InputComponent type="text" text="Quantidade de Litros" name="litros"/>
+                    <InputComponent type="text" text="CPF do Cliente" name="cpf"/>
+                    <InputComponent type="text" text="Nome do Cliente" name="nome"/>
                 </form>
             </div>
         );
     }
 }
 
-export default novoAbastecimento;
+export default NovoAbastecimento;

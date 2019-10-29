@@ -4,7 +4,7 @@ export const InputComponent = function(props){
     return (
         <div>
             <label for={props.name}>{props.text}</label>
-            <input type="text" name={props.name} id={props.name}></input>
+            <input type={props.type} name={props.name} id={props.name} value={props.value}></input>
         </div>
     );
 }
